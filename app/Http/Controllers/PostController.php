@@ -21,17 +21,23 @@ class PostController extends Controller
             4=> "Доброе утро"
         ];
     }
-    public function hello5($name){
+    public function hello5($name)
+    {
         $users = [
-            'Дмитрий'=> "Томск",
-            'Алексей'=> "Москва",
-            'Лиза'=> "Питер",
+            'Дмитрий' => "Томск",
+            'Алексей' => "Москва",
+            'Лиза' => "Питер",
         ];
-        if (isset($users[$name]) ){
+        if (isset($users[$name])) {
             return $users[$name];
-        }else{
+        } else {
             return "Такого пользователя нет!";
         }
-
     }
-}
+        public function hello6(){
+            return view('post.hello');
+        }
+        public function hello7($name){
+        return view('hello7', ['name'=>$name, 'title' => 'Заголовок']);
+        }
+   }
